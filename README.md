@@ -18,8 +18,10 @@ Create a `.env` file in the root directory:
 ```env
 PORT=3000
 JWT_SECRET=your_super_secure_jwt_secret_key
-ADMIN_EMAIL=admin@vendx.com
-ADMIN_PASSWORD=admin123
+ADMIN_EMAIL=admin@yourdomain.com
+ADMIN_PASS=your_secure_admin_password
+CLIENT_EMAIL=client@yourdomain.com
+CLIENT_PASS=your_secure_client_password
 ```
 
 ---
@@ -55,9 +57,8 @@ npm run dev
 ```
 
 ### 3. Admin Access Credentials
-- **Email**: `admin@vendx.com`
-- **Password**: `admin123`
-- Navigate to: `http://localhost:3000/admin.html` to access the portal.
+The default admin and client accounts are created automatically upon first run using the credentials you specify in your `.env` file.
+- Navigate to: `http://localhost:3000/admin.html` to access the portal and log in with your configured `ADMIN_EMAIL` and `ADMIN_PASS`.
 
 ---
 
