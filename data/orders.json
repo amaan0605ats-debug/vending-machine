@@ -1,0 +1,101 @@
+[
+  {
+    "id": "ORD-1779018208896",
+    "productId": "1",
+    "productName": "SmartVend Pro 500",
+    "name": "Test Customer",
+    "email": "test@example.com",
+    "phone": "+91 9876543210",
+    "quantity": 1,
+    "totalAmount": 85000,
+    "paymentMethod": "UPI",
+    "createdAt": "2026-05-17T11:43:28.896Z",
+    "status": "confirmed"
+  },
+  {
+    "id": "ORD-1779023498548",
+    "productId": 1,
+    "productName": "SmartVend Pro 500",
+    "name": "MUSUAM",
+    "email": "amaan0605ats@gmail.com",
+    "phone": "9103585869",
+    "address": "",
+    "quantity": 1,
+    "totalAmount": 67,
+    "paymentMethod": "UPI",
+    "createdAt": "2026-05-17T13:11:38.548Z",
+    "status": "pending"
+  },
+  {
+    "id": "ORD-1779034705320",
+    "productId": 3,
+    "productName": "ComboMax Elite (x1)",
+    "name": "amaan mir",
+    "email": "amaan0605ats@gmail.com",
+    "phone": "9103585869",
+    "address": "bagh i mehtab",
+    "quantity": 1,
+    "totalAmount": 125000,
+    "paymentMethod": "Quote Request",
+    "createdAt": "2026-05-17T16:18:25.320Z",
+    "status": "pending",
+    "items": [
+      {
+        "id": 3,
+        "name": "ComboMax Elite",
+        "price": 125000,
+        "image": "assets/combo_machine_1779011666525.png",
+        "tagline": "",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "ORD-1779034767968",
+    "productId": 3,
+    "productName": "ComboMax Elite (x3)",
+    "name": "amaan mir",
+    "email": "amaan0605ats@gmail.com",
+    "phone": "9103585869",
+    "address": "bagh i mehtab",
+    "quantity": 3,
+    "totalAmount": 375000,
+    "paymentMethod": "Quote Request",
+    "createdAt": "2026-05-17T16:19:27.968Z",
+    "status": "pending",
+    "items": [
+      {
+        "id": 3,
+        "name": "ComboMax Elite",
+        "price": 125000,
+        "image": "assets/combo_machine_1779011666525.png",
+        "tagline": "",
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "id": "ORD-1779036879653",
+    "productId": 3,
+    "productName": "ComboMax Elite (x1)",
+    "name": "amaan mir",
+    "email": "amaan0605ats@gmail.com",
+    "phone": "9103585869",
+    "address": "bagh i mehtab",
+    "quantity": 1,
+    "totalAmount": 125000,
+    "paymentMethod": "Quote Request",
+    "createdAt": "2026-05-17T16:54:39.653Z",
+    "status": "pending",
+    "items": [
+      {
+        "id": 3,
+        "name": "ComboMax Elite",
+        "price": 125000,
+        "image": "assets/combo_machine_1779011666525.png",
+        "tagline": "",
+        "quantity": 1
+      }
+    ]
+  }
+]

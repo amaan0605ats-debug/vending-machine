@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - VendX</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .checkout-hero { padding: 160px 60px 100px; background: var(--bg-primary); min-height: 100vh; }
+    .checkout-container { 
+      background: var(--bg-secondary); border-radius: 20px; max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 40px 100px rgba(0,0,0,0.08); overflow: hidden;
+    }
+    .co-summary { background: var(--accent-black); color: #fff; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+    .co-summary img { max-width: 200px; margin: 0 auto 30px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)); }
+    .co-summary h2 { font-size: 2rem; margin-bottom: 10px; font-weight: 300; }
+    .co-summary p { color: var(--text-light); margin-bottom: 20px; font-family: 'Inter', sans-serif; }
+    .co-summary .co-price { font-size: 2.5rem; font-weight: 600; font-family: 'Inter', sans-serif; }
+    
+    .co-form-wrap { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+    .co-form-wrap h2 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 10px; font-weight: 300; }
+    .co-form-wrap p { color: var(--text-muted); margin-bottom: 30px; font-family: 'Inter', sans-serif; font-size: 0.95rem; }
+    
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: var(--text-dark); }
+    .form-group input { width: 100%; padding: 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 1rem; outline: none; transition: 0.2s; background: var(--bg-tertiary); }
+    .form-group input:focus { border-color: var(--text-dark); background: #fff; }
+    .btn-submit { width: 100%; padding: 18px; margin-top: 10px; font-size: 1rem; }
+    
+    .success-msg { display: none; text-align: center; color: #2e7d32; padding: 40px; }
+    .success-msg h3 { font-size: 2rem; margin-bottom: 10px; color: var(--text-dark); }
+    .success-msg p { font-family: 'Inter', sans-serif; color: var(--text-muted); line-height: 1.6; }
+    .success-msg .btn { margin-top: 20px; }
+
+    @media(max-width: 768px) {
+      .checkout-container { grid-template-columns: 1fr; }
+      .checkout-hero { padding: 120px 24px 40px; }
+      .co-summary, .co-form-wrap { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="logo-svg">
+      <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10L10 50L50 90L90 50L50 10Z" stroke="#1a1e23" stroke-width="4"/>
+        <path d="M50 30L30 50L50 70L70 50L50 30Z" fill="#1a1e23"/>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#shop">Vending Machines</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      
+    </ul>
+    <div class="nav-social">
+      <button class="btn btn-outline" onclick="window.history.back()">← Back</button>
+    </div>
+  </nav>
+
+  <section class="checkout-hero">
+    <div class="checkout-container fade-in" id="coContainer">
+      <div class="co-summary" id="coSummary">
+        <p>Loading product...</p>
+      </div>
+      <div class="co-form-wrap">
+        
+        <div id="coFormBlock">
+          <h2>Send Request</h2>
+          <p>Enter your details below and our team will contact you to finalize the purchase and setup.</p>
+          <form id="checkoutForm">
+            <input type="hidden" id="productId" name="productId">
+            <input type="hidden" id="productName" name="productName">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="email" required placeholder="john@company.com">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="phone" required placeholder="+91 9876543210">
+            </div>
+            <div class="form-group">
+              <label>Shipping Address</label>
+              <input type="text" id="address" required placeholder="123 Main St, City, State, Pin Code">
+            </div>
+            <div class="form-group">
+              <label>Quantity</label>
+              <input type="number" id="quantity" min="1" max="100" value="1" required style="width: 100%; padding: 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 1rem; outline: none; background: var(--bg-tertiary);">
+            </div>
+            <div id="coErrorBox" style="display:none; background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); padding: 12px; border-radius: 8px; color: #ef4444; font-size: 0.85rem; font-family: 'Inter', sans-serif; margin-bottom: 15px;">
+              <strong>⚠️ Error:</strong> <span id="coErrorText"></span>
+            </div>
+            <button type="submit" class="btn btn-dark btn-submit" style="margin-top: 10px;">Send Request</button>
+          </form>
+        </div>
+
+        <div id="coSuccessBlock" class="success-msg">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 20px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <h3>Request Received!</h3>
+          <p>Thank you for choosing VendX. Our B2B sales team will contact you shortly to finalize your custom vending request.</p>
+          
+          <a href="index.html" class="btn btn-outline" style="margin-top: 20px;">Back to Home</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>VendX Vending</h3>
+        <p>Providing state-of-the-art smart vending solutions since 1989. Revolutionize your retail experience today.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: amaan0605ats@gmail.com</p>
+        <p>Phone: +91 78897 36790 / +91 60063 27013</p>
+        <p>Address: Tech Park, Mumbai, India</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="index.html#shop">Machines</a>
+        <a href="contact.html">Send Inquiry</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 VendX Vending. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="global.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

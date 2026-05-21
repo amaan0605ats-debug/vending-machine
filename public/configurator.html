@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VendX - Vending Machine Customizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Custom specific styles for the configurator canvas options */
+    .carbon-skin {
+      background: repeating-linear-gradient(45deg, #151515, #151515 10px, #202020 10px, #202020 20px) !important;
+    }
+    .neon-skin {
+      background: #020617 !important;
+    }
+    .wood-skin {
+      background: linear-gradient(135deg, #78350f, #451a03) !important;
+    }
+    .default-skin {
+      background: #111 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="logo">VEND<span>X</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#shop">Shop</a></li>
+      <li><a href="configurator.html" class="active">Configurator</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      
+    </ul>
+    <div class="nav-social">
+      <!-- Cart button injected here by global.js -->
+    </div>
+  </nav>
+
+  <!-- Configurator Area -->
+  <section class="section" style="padding-top: 120px;">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 20px;">
+        <h1 class="reveal visible" style="font-size: 2.8rem;">Visual Kiosk Configurator</h1>
+        <p class="reveal visible" style="color: var(--text-muted); max-width: 600px;">
+          Build and style your own custom commercial vending solution in real-time. Choose your model shell, wraps, and high-tech components.
+        </p>
+      </div>
+
+      <div class="config-layout">
+        
+        <!-- Left: Interactive CSS Machine Preview -->
+        <div class="machine-visual-pane reveal visible">
+          <div class="machine-canvas" id="machinePreview">
+            <div class="neon-glow-strip" id="neonStrip"></div>
+            <div class="machine-header-sign" id="machineSign">VENDX PRO</div>
+            <div class="machine-glass-front" id="machineGlass">
+              <!-- Internal Shelves will be loaded dynamically via JS -->
+            </div>
+            <div class="machine-dispenser-compartment"></div>
+          </div>
+        </div>
+
+        <!-- Right: Options Menu -->
+        <div class="options-pane reveal visible">
+          
+          <!-- Step 1: Base Model -->
+          <div>
+            <div class="option-section-title">1. Select Base Model</div>
+            <div class="option-cards-grid">
+              <div class="option-card active" data-step="model" data-val="snacks" data-price="97000" data-label="Pro Snacks Shell">
+                <h4>Pro 500</h4>
+                <p>Snacks & treats</p>
+              </div>
+              <div class="option-card" data-step="model" data-val="beverages" data-price="72000" data-label="Beverage Station">
+                <h4>CoolBreeze</h4>
+                <p>Drinks & sodas</p>
+              </div>
+              <div class="option-card" data-step="model" data-val="combo" data-price="125000" data-label="ComboMax Elite">
+                <h4>ComboMax</h4>
+                <p>All-in-one shelves</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Custom Wraps & Skin -->
+          <div>
+            <div class="option-section-title">2. Choose Exterior Skin</div>
+            <div class="option-cards-grid">
+              <div class="option-card active" data-step="skin" data-val="default" data-price="0" data-label="Matte Black">
+                <h4>Matte Black</h4>
+                <p>Classic steel</p>
+              </div>
+              <div class="option-card" data-step="skin" data-val="carbon" data-price="15000" data-label="Carbon Fiber Wrap">
+                <h4>Carbon Fiber</h4>
+                <p>Tech weave (+$15k)</p>
+              </div>
+              <div class="option-card" data-step="skin" data-val="neon" data-price="18000" data-label="Electric Neon">
+                <h4>Electric Neon</h4>
+                <p>LED borders (+$18k)</p>
+              </div>
+              <div class="option-card" data-step="skin" data-val="wood" data-price="25000" data-label="Luxury Wood">
+                <h4>Luxury Wood</h4>
+                <p>Warm grain (+$25k)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Upgrades & Accessories -->
+          <div>
+            <div class="option-section-title">3. Technology additions</div>
+            <div class="option-cards-grid">
+              <div class="option-card" data-step="addon" data-val="touch" data-price="20000" data-label="32' Touchscreen UI">
+                <h4>32" Touch UI</h4>
+                <p>Interactive screens (+$20k)</p>
+              </div>
+              <div class="option-card" data-step="addon" data-val="telemetry" data-price="12000" data-label="IoT Cloud Telemetry">
+                <h4>Cloud IoT</h4>
+                <p>Live inventory (+$12k)</p>
+              </div>
+              <div class="option-card" data-step="addon" data-val="decal" data-price="8000" data-label="Custom Vinyl Decal">
+                <h4>Brand Branding</h4>
+                <p>Logo graphics (+$8k)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quote & Order Panel -->
+          <div style="background: rgba(255,255,255,0.4); border:1px solid rgba(0,0,0,0.1); padding:25px; border-radius:12px; margin-top:20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+              <span style="font-family:'Outfit',sans-serif; text-transform:uppercase; color:var(--text-light); font-size:1rem;">Estimated Build Cost</span>
+              <span id="configCost" style="font-size:1.8rem; font-family:'Outfit',sans-serif; color:var(--text-dark); font-weight:bold;">₹97,000</span>
+            </div>
+            <button class="btn btn-dark" id="configQuoteBtn" style="width: 100%; padding:16px;">Request Configuration Quote</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>VendX Vending</h3>
+        <p>Providing state-of-the-art smart vending solutions since 1989. Revolutionize your retail experience today.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <p>Email: amaan0605ats@gmail.com</p>
+        <p>Phone: +91 78897 36790 / +91 60063 27013</p>
+        <p>Address: Tech Park, Mumbai, India</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="index.html#shop">Machines</a>
+        <a href="configurator.html">Customizer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 VendX Vending. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="global.js"></script>
+  <script src="configurator.js"></script>
+</body>
+</html>

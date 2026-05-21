@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "name": "SmartVend Pro 500",
+    "tagline": "Best Seller",
+    "price": 97000,
+    "originalPrice": 110000,
+    "category": "snacks",
+    "image": "assets/snack_machine_1779011627894.png",
+    "capacity": "500 items",
+    "upi": true,
+    "features": [
+      "UPI / QR Payments",
+      "32\" Touch Display",
+      "500 Item Capacity",
+      "Real-Time Stock Alert",
+      "Remote Management",
+      "24/7 Support"
+    ],
+    "description": "Perfect for offices, malls & colleges. Accepts UPI, cards & cash.",
+    "inStock": true,
+    "rating": 4.8,
+    "reviews": 124
+  },
+  {
+    "id": 2,
+    "name": "CoolBreeze Beverage Station",
+    "tagline": "Popular",
+    "price": 72000,
+    "originalPrice": 95000,
+    "category": "beverages",
+    "image": "assets/beverage_machine_1779011649180.png",
+    "capacity": "300 bottles",
+    "upi": true,
+    "features": [
+      "UPI / QR Payments",
+      "Dual Temperature Zone",
+      "300 Bottle Capacity",
+      "Energy Efficient",
+      "Anti-theft Lock",
+      "LED Display"
+    ],
+    "description": "Hot & cold beverages in one machine. Ideal for gyms and hospitals.",
+    "inStock": true,
+    "rating": 4.7,
+    "reviews": 89
+  },
+  {
+    "id": 3,
+    "name": "ComboMax Elite",
+    "tagline": "New Launch",
+    "price": 125000,
+    "originalPrice": 160000,
+    "category": "combo",
+    "image": "assets/combo_machine_1779011666525.png",
+    "capacity": "700 items",
+    "upi": true,
+    "features": [
+      "UPI / QR Payments",
+      "Snacks + Beverages",
+      "700 Item Capacity",
+      "AI Restocking Alert",
+      "Multi-payment Support",
+      "Cloud Dashboard"
+    ],
+    "description": "The ultimate all-in-one vending solution with cloud management.",
+    "inStock": true,
+    "rating": 4.9,
+    "reviews": 56
+  },
+  {
+    "id": 4,
+    "name": "FreshBox Healthy Vend",
+    "tagline": "Trending",
+    "price": 65000,
+    "originalPrice": 82000,
+    "category": "healthy",
+    "image": "assets/healthy_machine_1779011684998.png",
+    "capacity": "200 items",
+    "upi": true,
+    "features": [
+      "UPI / QR Payments",
+      "Refrigerated Storage",
+      "Nutritional Display",
+      "Expiry Tracking",
+      "Eco-Friendly",
+      "Compact Design"
+    ],
+    "description": "Sell fresh fruits, salads & healthy snacks with freshness control.",
+    "inStock": true,
+    "rating": 4.6,
+    "reviews": 43
+  },
+  {
+    "id": 5,
+    "name": "CafeVend Espresso",
+    "tagline": "Premium",
+    "price": 95000,
+    "originalPrice": 130000,
+    "category": "beverages",
+    "image": "assets/coffee_machine_1779011706643.png",
+    "capacity": "1000 cups",
+    "upi": true,
+    "features": [
+      "UPI / QR Payments",
+      "Bean-to-Cup Coffee",
+      "1000 Cup Capacity",
+      "10 Beverage Options",
+      "Self-Cleaning",
+      "Loyalty Program"
+    ],
+    "description": "Barista-quality coffee & beverages for premium locations.",
+    "inStock": false,
+    "rating": 4.9,
+    "reviews": 78
+  },
+  {
+    "id": 6,
+    "name": "MiniVend Compact",
+    "tagline": "Budget Pick",
+    "price": 35000,
+    "originalPrice": 45000,
+    "category": "snacks",
+    "image": "assets/mini_machine_1779011727148.png",
+    "capacity": "150 items",
+    "upi": true,
+    "features": [
+      "UPI / QR Payments",
+      "Compact Size",
+      "150 Item Capacity",
+      "Easy Maintenance",
+      "Plug & Play",
+      "1 Year Warranty"
+    ],
+    "description": "Affordable starter vending machine for small shops and offices.",
+    "inStock": true,
+    "rating": 4.4,
+    "reviews": 201
+  }
+]
