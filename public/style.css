@@ -688,6 +688,7 @@ h3 {
   position: relative;
   margin: 0 -10px;
   padding: 10px;
+  touch-action: pan-y pinch-zoom;
 }
 
 .products-grid {

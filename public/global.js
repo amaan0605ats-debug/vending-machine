@@ -209,7 +209,8 @@ const initGlobal = () => {
   }
 
   if (cartCheckoutBtn) {
-    cartCheckoutBtn.onclick = () => {
+    const handleCheckout = (e) => {
+      e.preventDefault();
       const cart = getCart();
       if (cart.length === 0) {
         alert('Your cart is empty!');
@@ -217,6 +218,8 @@ const initGlobal = () => {
       }
       window.location.href = 'checkout.html';
     };
+    cartCheckoutBtn.addEventListener('click', handleCheckout);
+    cartCheckoutBtn.addEventListener('touchstart', handleCheckout, { passive: false });
   }
 
   window.addToCart = addToCart;
